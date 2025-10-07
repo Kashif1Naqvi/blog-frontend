@@ -1,0 +1,44 @@
+.comment-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.comment-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.comment-card .dropdown-toggle {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.comment-card .dropdown-toggle:hover {
+  background-color: var(--color-light-gray) !important;
+}
+
+.comment-card .dropdown-menu {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.comment-card .dropdown-item:hover {
+  background-color: var(--color-light-gray);
+}
+
+.comment-card .dropdown-item.text-danger:hover {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: var(--color-error) !important;
+}
+
+.comment-card textarea {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.comment-card textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.25);
+}

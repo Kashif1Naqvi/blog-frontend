@@ -1,0 +1,172 @@
+.theme-toggle-container {
+  position: relative;
+}
+
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.1) rotate(15deg) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.theme-icon {
+  font-size: 20px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease;
+}
+
+.theme-dropdown-menu {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  padding: 1rem !important;
+  min-width: 200px !important;
+  margin-top: 0.5rem !important;
+}
+
+[data-theme="dark"] .theme-dropdown-menu {
+  background: rgba(31, 41, 55, 0.95) !important;
+  border-color: rgba(75, 85, 99, 0.8) !important;
+}
+
+.theme-menu-header {
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(226, 232, 240, 0.6);
+}
+
+[data-theme="dark"] .theme-menu-header {
+  border-bottom-color: rgba(75, 85, 99, 0.6);
+}
+
+.theme-menu-header h6 {
+  margin: 0;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .theme-menu-header h6 {
+  color: #f9fafb;
+}
+
+.theme-option {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 1rem !important;
+  border: none !important;
+  background: transparent !important;
+  color: #374151 !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  margin-bottom: 0.25rem !important;
+}
+
+[data-theme="dark"] .theme-option {
+  color: #d1d5db !important;
+}
+
+.theme-option:hover {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  color: #1f2937 !important;
+  transform: translateX(4px) !important;
+}
+
+[data-theme="dark"] .theme-option:hover {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%) !important;
+  color: #f9fafb !important;
+}
+
+.theme-option.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+.theme-option.active:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+  color: white !important;
+  transform: translateX(4px) scale(1.02) !important;
+}
+
+.option-icon {
+  font-size: 18px !important;
+  flex-shrink: 0;
+}
+
+.option-label {
+  flex: 1;
+  font-size: 0.9375rem;
+}
+
+.option-check {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+}
+
+.theme-menu-footer {
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.6);
+  text-align: center;
+}
+
+[data-theme="dark"] .theme-menu-footer {
+  border-top-color: rgba(75, 85, 99, 0.6);
+}
+
+.theme-menu-footer small {
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+[data-theme="dark"] .theme-menu-footer small {
+  color: #9ca3af;
+}
+
+/* Animation for theme transition */
+.theme-transition {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .theme-dropdown-menu {
+    min-width: 180px !important;
+    padding: 0.75rem !important;
+  }
+
+  .theme-option {
+    padding: 0.625rem 0.75rem !important;
+  }
+
+  .option-icon {
+    font-size: 16px !important;
+  }
+
+  .option-label {
+    font-size: 0.875rem;
+  }
+}

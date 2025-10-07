@@ -1,0 +1,28 @@
+:root {
+  /* Color Palette */
+  --bg-app: #f5ebe0;
+  --bg-card: #ffffff;
+  --color-heading: #333333;
+  --color-body: #4a3f35;
+  --color-primary: #d4a373;
+  --color-hover: #6b705c;
+  --color-error: #d32f2f;
+  --color-success: #4caf50;
+  --color-border: #e0d6cc;
+  
+  /* Derived Colors */
+  --color-primary-light: #e3c4a0;
+  --color-primary-dark: #b88b5d;
+  --color-hover-light: #8a9079;
+  --color-hover-dark: #545849;
+  --color-muted: #7d7268;
+  --color-light-gray: #f9f6f2;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(74, 63, 53, 0.08);
+  --shadow-md: 0 4px 12px rgba(74, 63, 53, 0.12);
+  --shadow-lg: 0 8px 24px rgba(74, 63, 53, 0.15);
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
