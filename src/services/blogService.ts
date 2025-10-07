@@ -67,7 +67,7 @@ export const getPosts = async (params?: {
   search?: string;
   status?: string;
   author?: number;
-  tag?: string;
+  tags?: string;
   ordering?: string;
 }) => {
   const response = await api.get('/blog/posts/', { params });

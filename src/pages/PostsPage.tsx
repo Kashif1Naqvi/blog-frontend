@@ -3,7 +3,6 @@ import { Container, Row, Col, Card, Badge, Button, Form, InputGroup, Spinner, Al
 import { Link as RouterLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import SearchIcon from '@mui/icons-material/Search';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -11,12 +10,10 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import ShareIcon from '@mui/icons-material/Share';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import CreateIcon from '@mui/icons-material/Create';
-import { Avatar, IconButton } from '@mui/material';
+import { Avatar } from '@mui/material';
 import { getPosts, likePost, bookmarkPost, type Post } from '../services/blogService';
-import LikeButton from '../components/LikeButton';
 import './PostsPage.css';
 
 const PostsPage = () => {
@@ -91,13 +88,6 @@ const PostsPage = () => {
       console.error('Error bookmarking post:', err);
     }
   };
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    setPage(1);
-    loadPosts();
-  };
-
   return (
     <div className="posts-page-modern">
       <Container fluid className="px-4">
