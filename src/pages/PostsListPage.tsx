@@ -9,7 +9,6 @@ import {
   Grid,
   Chip,
   Avatar,
-  Stack,
   TextField,
   InputAdornment,
   Select,
@@ -17,8 +16,6 @@ import {
   FormControl,
   InputLabel,
   Pagination,
-  CircularProgress,
-  Divider,
   IconButton,
   Container,
   Button,
@@ -335,7 +332,7 @@ const PostsListPage = () => {
           {loading ? (
             <Grid container spacing={4}>
               {[...Array(6)].map((_, index) => (
-                <Grid item xs={12} md={6} lg={4} key={index}>
+                <Grid item xs={12} md={6} lg={4} key={index} {...({} as any)}>
                   <Card className="post-skeleton-card">
                     <Skeleton variant="rectangular" height={220} />
                     <CardContent>
@@ -378,7 +375,7 @@ const PostsListPage = () => {
             <>
               <Grid container spacing={4}>
                 {posts.map((post, index) => (
-                  <Grid item xs={12} md={6} lg={4} key={post.id}>
+                  <Grid  item xs={12} md={6} lg={4} key={post.id} {...({} as any)}>
                     <Fade in timeout={600} style={{ transitionDelay: `${index * 100}ms` }}>
                       <Card
                         component={RouterLink}

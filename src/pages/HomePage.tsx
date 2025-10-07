@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
@@ -15,10 +15,9 @@ import { getPosts, likePost, bookmarkPost, type Post } from '../services/blogSer
 import './HomePage.css';
 
 const HomePage = () => {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     loadPosts();
@@ -27,7 +26,6 @@ const HomePage = () => {
   const loadPosts = async () => {
     try {
       setLoading(true);
-      setError(null);
       const data = await getPosts({
         status: 'published',
         ordering: '-views_count',
@@ -36,7 +34,6 @@ const HomePage = () => {
       setPosts(data.results.slice(0, 6));
     } catch (err) {
       console.error('Error loading posts:', err);
-      setError('Failed to load posts');
     } finally {
       setLoading(false);
     }
@@ -93,7 +90,7 @@ const HomePage = () => {
                     
                     {!isAuthenticated && (
                       <Button 
-                        as={Link} 
+                        as={Link as any} 
                         to="/register" 
                         variant="outline-light" 
                         size="lg"
@@ -364,7 +361,7 @@ const HomePage = () => {
           {/* View All Button */}
           <div className="text-center mt-5">
             <Button 
-              as={Link} 
+              as={Link as any} 
               to="/posts" 
               size="lg"
               className="btn-modern btn-glass"

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge, Nav, Dropdown, Modal, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Button, Badge, Nav, Dropdown, Modal, Spinner, Alert } from 'react-bootstrap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import AddIcon from '@mui/icons-material/Add';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -9,7 +9,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentIcon from '@mui/icons-material/Comment';
 import ArticleIcon from '@mui/icons-material/Article';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PublishIcon from '@mui/icons-material/Publish';
 import DraftsIcon from '@mui/icons-material/Drafts';
@@ -229,7 +228,7 @@ const MyPostsPage = () => {
             </p>
             <Button 
               className="empty-action-btn"
-              as={RouterLink}
+              as={RouterLink as any}
               to="/posts/create"
             >
               <AddIcon className="me-2" />
@@ -275,7 +274,7 @@ const MyPostsPage = () => {
                       <Button
                         variant="light"
                         size="sm"
-                        as={RouterLink}
+                        as={RouterLink as any}
                         to={`/posts/${post.id}`}
                         className="quick-action-btn view"
                       >
@@ -284,7 +283,7 @@ const MyPostsPage = () => {
                       <Button
                         variant="light"
                         size="sm"
-                        as={RouterLink}
+                        as={RouterLink as any}
                         to={`/posts/edit/${post.id}`}
                         className="quick-action-btn edit"
                       >
@@ -352,11 +351,11 @@ const MyPostsPage = () => {
                           <MoreVertIcon />
                         </Dropdown.Toggle>
                         <Dropdown.Menu className="post-menu-enhanced">
-                          <Dropdown.Item as={RouterLink} to={`/posts/${post.id}`}>
+                          <Dropdown.Item as={RouterLink as any} to={`/posts/${post.id}`}>
                             <VisibilityIcon className="menu-icon" />
                             View Post
                           </Dropdown.Item>
-                          <Dropdown.Item as={RouterLink} to={`/posts/edit/${post.id}`}>
+                          <Dropdown.Item as={RouterLink as any} to={`/posts/edit/${post.id}`}>
                             <EditIcon className="menu-icon" />
                             Edit Post
                           </Dropdown.Item>

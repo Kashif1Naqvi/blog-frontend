@@ -47,9 +47,6 @@ const SocialShare = ({
     if (link) {
       // Enhanced Facebook sharing
       if (platform === 'facebook') {
-        // Use Facebook's debugger to scrape the URL first (helps with meta tags)
-        const debugUrl = `https://developers.facebook.com/tools/debug/sharing/?q=${encodedUrl}`;
-        
         // Open Facebook share dialog with proper dimensions
         window.open(
           link, 

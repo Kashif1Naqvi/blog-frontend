@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { 
   AppBar, 
   Box, 
@@ -18,7 +18,6 @@ import {
   IconButton,
   Avatar,
   Stack,
-  Chip,
   Tooltip
 } from '@mui/material';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
@@ -31,11 +30,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
-import { useTheme as useCustomTheme } from '../contexts/ThemeContext'; // Rename custom useTheme
 
 interface LayoutProps {
   children: ReactNode;
@@ -47,7 +42,6 @@ const DRAWER_WIDTH_COLLAPSED = 72;
 const Layout = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, user } = useAuth();
   const muiTheme = useMuiTheme(); // MUI theme for breakpoints
-  const customTheme = useCustomTheme(); // Custom theme for dark/light mode
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md')); // Use MUI theme for breakpoints
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopOpen, setDesktopOpen] = useState(true);

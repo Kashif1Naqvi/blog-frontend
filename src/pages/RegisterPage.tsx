@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Card, Form, Button, Alert, FloatingLabel } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert, FloatingLabel } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
@@ -9,7 +9,6 @@ import LockIcon from '@mui/icons-material/Lock';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import SecurityIcon from '@mui/icons-material/Security';
 import GroupsIcon from '@mui/icons-material/Groups';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';

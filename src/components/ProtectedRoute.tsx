@@ -1,9 +1,10 @@
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { CircularProgress, Box } from '@mui/material';
 
 interface ProtectedRouteProps {
-  children: JSX.Element;
+  children: React.ReactElement;
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {

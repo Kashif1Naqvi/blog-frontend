@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Form, Modal, Badge, Spinner, Alert, Image } from 'react-bootstrap';
+import { Container, Card, Button, Form, Modal, Spinner, Alert, Image } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
-import { updateProfile } from '../services/userService';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import EditIcon from '@mui/icons-material/Edit';
@@ -11,11 +10,10 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import StarIcon from '@mui/icons-material/Star';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import { Box, Typography, Avatar, Chip, IconButton } from '@mui/material';
+import {  Typography, Chip, IconButton } from '@mui/material';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
@@ -46,8 +44,7 @@ const ProfilePage = () => {
           formData.append('profile_picture', values.profile_picture);
         }
         
-        const updatedUser = await updateProfile(formData);
-        updateUserInfo(updatedUser);
+        updateUserInfo();
         setSuccess('Profile updated successfully! ✨');
         setShowEditModal(false);
         

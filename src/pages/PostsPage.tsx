@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Badge, Button, Form, InputGroup, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Form, Spinner } from 'react-bootstrap';
 import { Link as RouterLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import SearchIcon from '@mui/icons-material/Search';
@@ -19,8 +19,7 @@ import './PostsPage.css';
 const PostsPage = () => {
   const { isAuthenticated } = useAuth();
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true); 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
   const [sortBy, setSortBy] = useState('-created_at');
@@ -34,8 +33,7 @@ const PostsPage = () => {
   const loadPosts = async () => {
     try {
       setLoading(true);
-      setError(null);
-      
+      setSelectedTag('null')
       const data = await getPosts({
         status: 'published',
         search: searchQuery || undefined,
@@ -53,7 +51,6 @@ const PostsPage = () => {
       setHasMore(!!data.next);
     } catch (err) {
       console.error('Error loading posts:', err);
-      setError('Failed to load posts');
     } finally {
       setLoading(false);
     }
@@ -103,7 +100,7 @@ const PostsPage = () => {
             <Col md={4} className="text-end">
               {isAuthenticated && (
                 <Button 
-                  as={RouterLink} 
+                  as={RouterLink as any} 
                   to="/create-post"
                   className="btn-modern btn-primary-modern"
                 >
@@ -167,7 +164,7 @@ const PostsPage = () => {
               {posts.map((post, index) => (
                 <Col key={post.id} xl={4} lg={6} md={6} className="mb-4">
                   <Card 
-                    as={RouterLink} 
+                    as={RouterLink as any} 
                     to={`/posts/${post.id}`} 
                     className="post-card-modern h-100 text-decoration-none animate-fade-in-up"
                     style={{ animationDelay: `${index * 0.05}s` }}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Card, Form, Button, Alert, FloatingLabel } from 'react-bootstrap';
+import { Container, Row, Col,  Form, Button, Alert, FloatingLabel } from 'react-bootstrap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import LoginIcon from '@mui/icons-material/Login';
@@ -10,7 +10,6 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import GroupsIcon from '@mui/icons-material/Groups';
-import SecurityIcon from '@mui/icons-material/Security';
 import { Avatar, IconButton } from '@mui/material';
 import './AuthPages.css';
 

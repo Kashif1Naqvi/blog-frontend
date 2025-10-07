@@ -1,6 +1,6 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { createContext, type ReactNode, useContext, useEffect, useState } from 'react';
 import { loginUser, logoutUser, registerUser } from '../services/authService';
-import { getProfile, updateProfile } from '../services/userService';
+import { getProfile } from '../services/userService';
 
 interface User {
   username: string;

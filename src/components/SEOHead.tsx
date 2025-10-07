@@ -4,12 +4,12 @@ interface SEOHeadProps {
   title?: string;
   description?: string;
   keywords?: string;
-  image?: string;
+  image?: string | null;
   url?: string;
   type?: 'website' | 'article' | 'profile';
   author?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
+  publishedTime?: string | null;
+  modifiedTime?: string ;
 }
 
 const SEOHead = ({
@@ -41,7 +41,7 @@ const SEOHead = ({
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={image || undefined} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
@@ -59,7 +59,7 @@ const SEOHead = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={image || undefined} />
       <meta name="twitter:creator" content="@BlogApp" />
       <meta name="twitter:site" content="@BlogApp" />
       

@@ -7,7 +7,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Cancel';
 import ReplyIcon from '@mui/icons-material/Reply';
-import { Comment, updateComment, deleteComment } from '../services/blogService';
+import type { Comment } from '../services/blogService';
+import { updateComment, deleteComment } from '../services/blogService';
 import { useAuth } from '../contexts/AuthContext';
 
 interface CommentItemProps {
@@ -107,7 +108,7 @@ const CommentItem: React.FC<CommentItemProps> = ({
               <Dropdown>
                 <Dropdown.Toggle 
                   as={IconButton}
-                  size="small"
+                  size="sm"
                   disabled={loading}
                 >
                   <MoreVertIcon style={{ fontSize: 16 }} />
