@@ -249,7 +249,7 @@ const PostsPage = () => {
                           ))}
                           {post.tags.length > 2 && (
                             <span className="tag-modern">+{post.tags.length - 2}</span>
-                          ))}
+                          )}
                         </div>
                       )}
 
