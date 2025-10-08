@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://web-production-07a0.up.railway.app/api';
+const API_URL = 'https://web-production-07a0.up.railway.app/api'; //'http://127.0.0.1:8000/api';
 
 const api = axios.create({
   baseURL: API_URL,
